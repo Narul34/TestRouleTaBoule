@@ -2,40 +2,49 @@ package testRouleTaBoule.elements;
 
 import java.awt.Image;
 
+
 // Element du décors, caractérisé par des coorodonnees, une taille et une image.
 
 public class Element {
-
+	
 	public static final int ELEMENT_WIDTH = 30;
 	public static final int ELEMENT_HEIGHT = 30;
 
-	private Coordonnees coordonnees;
-	private Image image;
+	protected Coordonnees coord;
+	protected Image image;
 
+	protected static Texture texture = new Texture();
+	
 	// ========== CONSTRUCTEUR ============
 
-	public Element(Coordonnees coordonnees, Image image) {
-		super();
-		this.setCoordonnees(coordonnees);
-		this.setImage(image);
+	public Element(Coordonnees coord, Image image) {
+		this.image = image;
+		this.coord = coord;
 	}
 
 	// =========== ACCESSEURS ===========
 	
+	public boolean isSolid() {
+		return false;
+	}
+	
+	public Coordonnees getCoord() {
+		return coord;
+	}
+	
 	public Image getImage() {
 		return image;
 	}
-
+	
 	public void setImage(Image image) {
 		this.image = image;
 	}
 
 	public Coordonnees getCoordonnees() {
-		return coordonnees;
+		return coord;
 	}
 
 	public void setCoordonnees(Coordonnees coordonnees) {
-		this.coordonnees = coordonnees;
+		this.coord = coordonnees;
 	}
-
 }
