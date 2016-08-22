@@ -15,6 +15,7 @@ public class Jeu {
 
 	private JCarte carte; 
 
+
 	public static boolean run = false;
 	
 	public Jeu(){
@@ -23,12 +24,13 @@ public class Jeu {
 	}
 	
 	public void boucle(){
-		
-		//init();
-		
-		while(run == true){
-			carte.dessine();
+
+		while (run){
+			System.out.println("update");
+			
+			
 			
 		}
+		
 	}
 }
