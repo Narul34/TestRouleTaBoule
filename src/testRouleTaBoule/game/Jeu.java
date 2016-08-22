@@ -1,5 +1,7 @@
 package testRouleTaBoule.game;
 
+import java.awt.Graphics;
+
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
@@ -12,23 +14,21 @@ import testRouleTaBoule.window.JCarte;
 public class Jeu {
 
 	private JCarte carte; 
-	private Fenetre fenetre;
+
+	public static boolean run = false;
 	
 	public Jeu(){
+		run = true;
 		carte = new JCarte();
-		fenetre = new Fenetre();
-		fenetre.setContentPane(carte);
-		
-		boucle();
 	}
 	
 	public void boucle(){
 		
-		init();
+		//init();
 		
-		while(continuer){
+		while(run == true){
+			carte.dessine();
 			
 		}
 	}
-	
 }

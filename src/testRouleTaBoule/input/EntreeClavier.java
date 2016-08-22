@@ -13,7 +13,7 @@ public class EntreeClavier implements KeyListener {
 		// Fleche du haut
 		if (e.getKeyCode() == 38) {
 			System.out.println("Vers le haut");
-			boule.move();
+			//boule.move();
 		}
 
 		// Fleche de gauche
