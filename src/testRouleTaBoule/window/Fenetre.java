@@ -55,7 +55,6 @@ public class Fenetre extends JFrame {
 		this.addKeyListener(new EntreeClavier());
 		
 		initMenu();
-		
 	}
 	
 public void initMenu(){
