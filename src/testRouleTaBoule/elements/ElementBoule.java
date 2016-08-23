@@ -3,13 +3,15 @@ package testRouleTaBoule.elements;
 import java.awt.Image;
 import java.awt.Rectangle;
 
+import testRouleTaBoule.input.EntreeClavier;
+import testRouleTaBoule.window.Fenetre;
 import testRouleTaBoule.window.GenerateurCoordCarte;
 
 public class ElementBoule {
 
 	public static final int BOULE_WIDTH = 30;
 	public static final int BOULE_HEIGHT = 30;
-	public static final float VITESSE_PAR_DEFAUT = 3.0f;
+	public static final float VITESSE_PAR_DEFAUT = 1.0f;
 	
 	private Coordonnees coord;
 	private int width, height;
@@ -39,18 +41,31 @@ public class ElementBoule {
 	
 	// Fonction de mouvement d'une creature
 		public void move() {
-			moveX();
-			moveY();
+			
+			moveXbis();
+			moveYbis();
+			//moveX();
+			//moveY();
 		}
 	
+		public void moveXbis(){
+			coord.setX((int)(coord.getX() + xMove));
+			
+		}
+		 public void moveYbis(){
+			 coord.setY((int)(coord.getY() + yMove));
+		 }
+		 
 		public void moveX() {
 
 			if (xMove > 0) {
 
 				int fuX = (int) (coord.getX() + xMove + collisionBox.x + collisionBox.width) / Element.ELEMENT_WIDTH;
+				System.out.println(xMove);
 				if (!collisionAvecElement(fuX, (int) (coord.getY() + collisionBox.y) / Element.ELEMENT_HEIGHT)
 						&& !collisionAvecElement(fuX, (int) (coord.getY() + collisionBox.y + collisionBox.height) / Element.ELEMENT_HEIGHT)) {
 					coord.setX((int)(coord.getX() + xMove)) ;
+					
 				} else {
 					coord.setX( fuX * Element.ELEMENT_WIDTH - collisionBox.x - collisionBox.width - 1);
 				}
@@ -89,6 +104,20 @@ public class ElementBoule {
 		
 		protected boolean collisionAvecElement(int x, int y) {
 			return GenerateurCoordCarte.element[x/30][y/30].isSolid();
+		}
+		
+		public void getInput() {
+			xMove = 0;
+			yMove = 0;
+			if (EntreeClavier.haut)
+				yMove = -speed;
+			if (EntreeClavier.bas)
+				yMove = speed;
+			if (EntreeClavier.gauche)
+				xMove = -speed;
+			if (EntreeClavier.droite)
+				xMove = speed;
+			move();
 		}
 		
 	// ==========Accesseurs============
