@@ -5,6 +5,7 @@ import javax.swing.JLabel;
 
 import testRouleTaBoule.elements.Coordonnees;
 import testRouleTaBoule.elements.ElementBoule;
+import testRouleTaBoule.sound.Sound;
 import testRouleTaBoule.window.GenerateurCoordCarte;
 import testRouleTaBoule.window.JCarte;
 
@@ -39,6 +40,28 @@ public class Jeu {
 		//int ticks = 0;
 
 		while (run){
+			
+			if (Sound.Smenu == true)
+			{
+				if(Sound.isPlayingMenu){
+					
+				}
+				else{
+					Sound.playMenu();
+				}
+				
+			}
+			if (Sound.Sjeu == true)
+			{
+				if (Sound.isPlayingJeu){
+					
+				}
+				else{
+					Sound.stopMenu();
+					Sound.playTheme();
+				}
+				
+			}
 			now = System.nanoTime();
 			delta += (now - lastTime) / timePerTick;
 			timer += now - lastTime;
@@ -48,7 +71,7 @@ public class Jeu {
 				boule.getInput();
 				imgBoule.setBounds(boule.getCoord().getX(), boule.getCoord().getY(), ElementBoule.BOULE_WIDTH, ElementBoule.BOULE_HEIGHT );
 				carte.layeredPane.repaint();
-				System.out.println(boule.getCoord().getX());
+				//System.out.println(boule.getCoord().getX());
 		
 				delta--;
 			}

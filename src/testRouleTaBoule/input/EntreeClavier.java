@@ -3,6 +3,8 @@ package testRouleTaBoule.input;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+import testRouleTaBoule.sound.Sound;
+
 
 public class EntreeClavier implements KeyListener {
 
@@ -14,6 +16,7 @@ public class EntreeClavier implements KeyListener {
 		// Fleche du haut
 		if (e.getKeyCode() == 38) {
 			haut = true;
+			Sound.Sjeu = true;
 				System.out.println("Vers le haut");
 		}
 
