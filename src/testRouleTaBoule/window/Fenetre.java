@@ -12,7 +12,7 @@ import javax.swing.JRadioButtonMenuItem;
 import javax.swing.KeyStroke;
 
 import testRouleTaBoule.input.EntreeClavier;
-import testRouleTaBoule.input.KeyManager;
+
 
 public class Fenetre extends JFrame {
 
@@ -21,7 +21,6 @@ public class Fenetre extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private KeyManager keyManager = new KeyManager();
 
 	// ************************************************************
 	// Barre du menu
@@ -103,7 +102,4 @@ public class Fenetre extends JFrame {
 
 	}
 	
-	public KeyManager getKeyManager(){
-		return keyManager;
-	}
 }
