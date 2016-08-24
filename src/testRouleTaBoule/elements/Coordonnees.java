@@ -1,5 +1,6 @@
 package testRouleTaBoule.elements;
 
+
 // Classe qui génère des entiers x et y correspondant aux coordonnées d'un objet.
 public class Coordonnees {
 	private Integer x;

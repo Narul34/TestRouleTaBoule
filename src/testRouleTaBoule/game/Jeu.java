@@ -20,7 +20,7 @@ public class Jeu {
 	public Jeu(){
 		run = true;
 		carte = new JCarte();
-		boule = new ElementBoule(new Coordonnees(carte.fenetre.getWidth()/2, carte.fenetre.getHeight()));
+		boule = new ElementBoule(new Coordonnees(GenerateurCoordCarte.startX, GenerateurCoordCarte.startY));
 		imgBoule = new JLabel();
 		imgBoule.setIcon(new ImageIcon(boule.getImage()));
 		imgBoule.setBounds(GenerateurCoordCarte.startX,GenerateurCoordCarte.startY, ElementBoule.BOULE_WIDTH, ElementBoule.BOULE_HEIGHT);
@@ -52,9 +52,7 @@ public class Jeu {
 		
 				delta--;
 			}
-			if (timer >= 1000000000){
-				timer = 0;
-			}
+				timer = timer %  1000000000;
 			
 			
 			

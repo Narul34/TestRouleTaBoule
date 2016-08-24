@@ -55,8 +55,6 @@ public class Fenetre extends JFrame {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setVisible(true);
 		this.addKeyListener(new EntreeClavier());
-		//this.addKeyListener(new KeyManager());
-
 		
 		initMenu();
 	}

@@ -11,7 +11,7 @@ public class ElementBoule {
 
 	public static final int BOULE_WIDTH = 30;
 	public static final int BOULE_HEIGHT = 30;
-	public static final float VITESSE_PAR_DEFAUT = 1.0f;
+	public static final float VITESSE_PAR_DEFAUT = 3.0f;
 	
 	private Coordonnees coord;
 	private int width, height;
@@ -49,6 +49,7 @@ public class ElementBoule {
 		}
 	
 		public void moveXbis(){
+			//if xMove >0)
 			coord.setX((int)(coord.getX() + xMove));
 			
 		}
