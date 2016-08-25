@@ -6,7 +6,6 @@ import java.io.File;
 import javax.sound.sampled.*;
 
 public class Sound {
-    private AudioFormat format;
     static Clip clip = null;
     public static boolean isPlayingJeu = false;
     public static boolean isPlayingMenu = false;

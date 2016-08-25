@@ -11,6 +11,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JRadioButtonMenuItem;
 import javax.swing.KeyStroke;
 
+import testRouleTaBoule.input.EcouteSouris;
 import testRouleTaBoule.input.EntreeClavier;
 
 
@@ -24,7 +25,7 @@ public class Fenetre extends JFrame {
 
 	// ************************************************************
 	// Barre du menu
-	JMenuBar mnuMenuBar = new JMenuBar();
+	public JMenuBar mnuMenuBar = new JMenuBar(); // taille height 23;
 
 	// options du menu
 	JMenu mnuJeu = new JMenu("Menu");
@@ -54,6 +55,7 @@ public class Fenetre extends JFrame {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setVisible(true);
 		this.addKeyListener(new EntreeClavier());
+		this.addMouseListener(new EcouteSouris());
 		
 		initMenu();
 	}

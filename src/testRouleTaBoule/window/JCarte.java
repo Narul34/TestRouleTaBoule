@@ -1,5 +1,6 @@
 package testRouleTaBoule.window;
 
+
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -27,13 +28,14 @@ public class JCarte extends JPanel{
 	//======== Constructeur ==========
 	
 	public JCarte(){
+		
 		System.out.println("contructeur carte");
 		dessine();
 		fenetre = new Fenetre();
 		
 		imageMap = new JLabel(new ImageIcon("fondCarte.PNG"));
 		imageMap.setBounds(0, 0,imageMap.getIcon().getIconWidth(),imageMap.getIcon().getIconHeight());
-		
+
 		panMap = new JPanel();
 		panMap.setLayout(null);
 		panMap.setBounds(0, fenetre.mnuMenuBar.getHeight(),imageMap.getIcon().getIconWidth(),imageMap.getIcon().getIconHeight());

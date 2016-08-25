@@ -21,7 +21,7 @@ X   M     M                  X
 X   M      MMMMMMMMMM        X
 X   M               M        X
 X   M               M        X
-X   MMMMMMMMMM      M        X
+X   MMMM   MMM      M        X
 X            M      M        X
 X            M      M        X
 X            M      M        X
