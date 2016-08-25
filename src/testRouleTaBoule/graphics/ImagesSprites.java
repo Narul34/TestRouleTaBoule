@@ -2,7 +2,7 @@ package testRouleTaBoule.graphics;
 
 import java.awt.image.BufferedImage;
 
-public class Images {
+public class ImagesSprites {
 
 	// On a besoin d'une largeur et d'une hauteur fixe
 	private static final int width = 30, height = 30;
@@ -21,15 +21,12 @@ public class Images {
 	public static BufferedImage mur;
 	public static BufferedImage limite;
 	public static BufferedImage piege;
+	public static BufferedImage objectif;
 
 	public static void init() {
-		Sprite image = new Sprite(ChargeImage.loadImage("/textures/boule_mobile.jpg")); // on
-																						// charge
-																						// l'image
-																						// dans
-																						// un
-																						// ojbet
-																						// Sprite
+
+		// on charge l'image dans un objet Sprite
+		Sprite image = new Sprite(ChargeImage.loadImage("sprites.png"));
 
 		// on découpe l'image pour la boule (premiere image a x=0 et y = 0
 		for (int i = 0; i < boule.length; i++) {
@@ -54,6 +51,8 @@ public class Images {
 			case 3:
 				vide = image.decoupe(indiceX, 150, width, height);
 				break;
+			case 4:
+				objectif = image.decoupe(indiceX, 150, width, height);
 			default:
 				;
 			}

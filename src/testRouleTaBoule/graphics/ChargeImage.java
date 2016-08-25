@@ -11,6 +11,7 @@ public class ChargeImage {
 
 	public static BufferedImage loadImage(String path) {
 		try {
+			System.out.println(path);
 			return ImageIO.read(ChargeImage.class.getResource(path));
 		} catch (IOException e) {
 			e.printStackTrace();

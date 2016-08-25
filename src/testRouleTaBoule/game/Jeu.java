@@ -5,6 +5,7 @@ import javax.swing.JLabel;
 
 import testRouleTaBoule.elements.Coordonnees;
 import testRouleTaBoule.elements.ElementBoule;
+import testRouleTaBoule.graphics.ImagesSprites;
 import testRouleTaBoule.sound.Sound;
 import testRouleTaBoule.window.GenerateurCoordCarte;
 import testRouleTaBoule.window.JCarte;
@@ -13,7 +14,7 @@ public class Jeu implements Runnable {
 
 	private JCarte carte;
 	private ElementBoule boule;
-	private GenerateurCoordCarte map = new GenerateurCoordCarte();
+	private GenerateurCoordCarte tabMap;
 	private JLabel imgBoule;
 	public static JLabel hitBox;
 
@@ -22,6 +23,8 @@ public class Jeu implements Runnable {
 	public static boolean running = false;
 
 	public Jeu() {
+		//ImagesSprites.init();
+		tabMap = new GenerateurCoordCarte();
 		carte = new JCarte();
 		boule = new ElementBoule(new Coordonnees(GenerateurCoordCarte.startX, GenerateurCoordCarte.startY));
 
