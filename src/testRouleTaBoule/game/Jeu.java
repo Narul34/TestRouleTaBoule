@@ -23,7 +23,7 @@ public class Jeu implements Runnable {
 	public static boolean running = false;
 
 	public Jeu() {
-		//ImagesSprites.init();
+		ImagesSprites.init();
 		tabMap = new GenerateurCoordCarte();
 		carte = new JCarte();
 		boule = new ElementBoule(new Coordonnees(GenerateurCoordCarte.startX, GenerateurCoordCarte.startY));

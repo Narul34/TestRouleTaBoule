@@ -1,9 +1,11 @@
 package testRouleTaBoule.elements;
 
+import testRouleTaBoule.graphics.ImagesSprites;
+
 public class ElementPiege extends Element {
 
 	public ElementPiege(Coordonnees coord) {
-		super(coord, texture.getPiege());
+		super(coord, ImagesSprites.piege);
 	}
 
 }

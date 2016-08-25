@@ -1,4 +1,4 @@
-package testRouleTaBoule.elements;
+package testRouleTaBoule.classDeCoté;
 
 import java.awt.Image;
 
@@ -24,16 +24,16 @@ public class Texture extends JPanel {
 	// ========== CONSTRUCTEUR ============
 
 	public Texture() {
-		super();
+		/*super();
 		try {
-			this.limite = ImageIO.read(new File("limite.jpg"));
-			this.mur = ImageIO.read(new File("mur.jpg"));
-			this.piege = ImageIO.read(new File("piege.jpg"));
-			this.boule = ImageIO.read(new File("boule.png"));
-			this.setVide(ImageIO.read(new File("vide.jpg")));
+			this.limite = ImageIO.read(new File("ressourcesDeCote/limite.jpg"));
+			this.mur = ImageIO.read(new File("ressourcesDeCote/mur.jpg"));
+			this.piege = ImageIO.read(new File("ressourcesDeCote/piege.jpg"));
+			this.boule = ImageIO.read(new File("ressourcesDeCote/boule.png"));
+			this.setVide(ImageIO.read(new File("ressourcesDeCote/vide.jpg")));
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
+		}*/
 	}
 
 	// ======== ACCESSEURS =======

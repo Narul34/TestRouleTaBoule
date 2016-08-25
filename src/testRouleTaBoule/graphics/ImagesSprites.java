@@ -1,6 +1,10 @@
 package testRouleTaBoule.graphics;
 
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 public class ImagesSprites {
 
@@ -11,7 +15,7 @@ public class ImagesSprites {
 	private static int indiceX = 0;
 
 	// nombre d'élément à afficher excepté la boule
-	private static int nbElement = 4;
+	private static int nbElement = 5;
 
 	// Tableau d'image pour la boule (6 imagesp our l'instant)
 	public static BufferedImage[] boule = new BufferedImage[6];
@@ -22,11 +26,19 @@ public class ImagesSprites {
 	public static BufferedImage limite;
 	public static BufferedImage piege;
 	public static BufferedImage objectif;
+	
+	public static Sprite image;
 
 	public static void init() {
 
 		// on charge l'image dans un objet Sprite
-		Sprite image = new Sprite(ChargeImage.loadImage("sprites.png"));
+		
+		try {
+			image = new Sprite(ImageIO.read(new File("sprites.png")));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		// on découpe l'image pour la boule (premiere image a x=0 et y = 0
 		for (int i = 0; i < boule.length; i++) {

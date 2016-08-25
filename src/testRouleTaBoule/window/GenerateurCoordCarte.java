@@ -54,7 +54,10 @@ public class GenerateurCoordCarte {
 
 					// System.out.println(bouleX);
 					// System.out.print("S");
-				} else if (charLigne == ' ') {
+				} else if (charLigne == 'O'){
+					element[x / 30][y / 30] = new ElementObjectif(new Coordonnees(x, y));
+					
+				}else if (charLigne == ' ') {
 					element[x / 30][y / 30] = new ElementVide(new Coordonnees(x, y));
 					// System.out.print(" ");
 				}

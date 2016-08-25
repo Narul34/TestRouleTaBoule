@@ -2,6 +2,8 @@ package testRouleTaBoule.elements;
 
 import java.awt.Image;
 
+import testRouleTaBoule.classDeCoté.Texture;
+
 // Element du décors, caractérisé par des coorodonnees, une taille et une image.
 
 public class Element {

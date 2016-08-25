@@ -3,6 +3,8 @@ package testRouleTaBoule.elements;
 import java.awt.Image;
 import java.awt.Rectangle;
 
+import testRouleTaBoule.classDeCoté.Texture;
+import testRouleTaBoule.graphics.ImagesSprites;
 import testRouleTaBoule.input.EntreeClavier;
 import testRouleTaBoule.window.GenerateurCoordCarte;
 
@@ -20,12 +22,12 @@ public class ElementBoule {
 	private float xMove;
 	private float yMove;
 
-	private Texture texture = new Texture();
+	//private Texture texture = new Texture();
 
 	private Rectangle collisionBox;
 
 	public ElementBoule(Coordonnees coord) {
-		this.image = texture.getBoule();
+		this.image = ImagesSprites.boule[0];
 		this.coord = coord;
 		this.width = BOULE_WIDTH;
 		this.height = BOULE_HEIGHT;
