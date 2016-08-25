@@ -1,7 +1,5 @@
 package testRouleTaBoule.game;
 
-import java.awt.Graphics;
-
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
@@ -11,26 +9,23 @@ import testRouleTaBoule.sound.Sound;
 import testRouleTaBoule.window.GenerateurCoordCarte;
 import testRouleTaBoule.window.JCarte;
 
-public class Jeu {
+public class Jeu implements Runnable {
 
 	private JCarte carte;
 	private ElementBoule boule;
 	private GenerateurCoordCarte map = new GenerateurCoordCarte();
 	private JLabel imgBoule;
 	public static JLabel hitBox;
-	
+
 	private Thread thread;
 
-	Graphics g;
-
-	public static boolean run = false;
+	public static boolean running = false;
 
 	public Jeu() {
-		run = true;
 		carte = new JCarte();
 		boule = new ElementBoule(new Coordonnees(GenerateurCoordCarte.startX, GenerateurCoordCarte.startY));
-		imgBoule = new JLabel();
 
+		imgBoule = new JLabel();
 		imgBoule.setIcon(new ImageIcon(boule.getImage()));
 		imgBoule.setBounds(GenerateurCoordCarte.startX, GenerateurCoordCarte.startY, ElementBoule.BOULE_WIDTH,
 				ElementBoule.BOULE_HEIGHT);
@@ -39,8 +34,7 @@ public class Jeu {
 
 	}
 
-	public void boucle() {
-
+	public void run() {
 		int fps = 70;
 		double timePerTick = 1000000000 / fps; // en nanoseconde
 		double delta = 0; // valeur utilisé pour le rendu, on met a jour et on
@@ -51,9 +45,9 @@ public class Jeu {
 						// dernier temps relevé
 		// int ticks = 0;
 
-		while (run) {
+		while (running) {
 
-			if (Sound.Smenu == true) {
+			if (Sound.Smenu) {
 				if (Sound.isPlayingMenu) {
 
 				} else {
@@ -61,7 +55,7 @@ public class Jeu {
 				}
 
 			}
-			if (Sound.Sjeu == true) {
+			if (Sound.Sjeu) {
 				if (Sound.isPlayingJeu) {
 
 				} else {
@@ -90,5 +84,22 @@ public class Jeu {
 		}
 
 	}
+
+	public void start() {
+		if (running == true) {
+			return;
+		} else {
+			running = true;
+			thread = new Thread(this);
+			thread.start();
+		}
+	}
+	/*
+	 * public synchronized void stop() { if (!running) return; running = false;
+	 * try { thread.join(); } catch (InterruptedException e) {
+	 * e.printStackTrace(); }
+	 * 
+	 * }
+	 */
 
 }

@@ -36,8 +36,8 @@ public class Texture extends JPanel {
 		}
 	}
 
-	//======== ACCESSEURS =======
-	
+	// ======== ACCESSEURS =======
+
 	public Image getLimite() {
 		return limite;
 	}

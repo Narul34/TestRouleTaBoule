@@ -10,7 +10,7 @@ public class GenerateurCoordCarte {
 
 	public static Element[][] element = new Element[30][30];
 	public static ElementBoule laBoule = null;
-	
+
 	public static int startX, startY;
 
 	// ========== CONSTRUCTEUR ============
@@ -23,7 +23,7 @@ public class GenerateurCoordCarte {
 		}
 	}
 
-	//========== Fonction qui créé un tableau d'"Element" à partir d'un fichier texte ============
+	// ========== Fonction qui créé un tableau d'"Element" à partir d'un fichier texte ============
 
 	public void genereMap() throws FileNotFoundException {
 		int x = 0;
@@ -48,7 +48,7 @@ public class GenerateurCoordCarte {
 					element[x / 30][y / 30] = new ElementPiege(new Coordonnees(x, y));
 					// System.out.print("P");
 				} else if (charLigne == 'S') {
-					element[x / 30][y / 30] = new ElementStart(new Coordonnees(x,y));
+					element[x / 30][y / 30] = new ElementStart(new Coordonnees(x, y));
 					startX = x;
 					startY = y;
 

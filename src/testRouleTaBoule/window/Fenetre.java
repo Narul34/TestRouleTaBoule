@@ -14,14 +14,12 @@ import javax.swing.KeyStroke;
 import testRouleTaBoule.input.EcouteSouris;
 import testRouleTaBoule.input.EntreeClavier;
 
-
 public class Fenetre extends JFrame {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
 
 	// ************************************************************
 	// Barre du menu
@@ -56,7 +54,7 @@ public class Fenetre extends JFrame {
 		this.setVisible(true);
 		this.addKeyListener(new EntreeClavier());
 		this.addMouseListener(new EcouteSouris());
-		
+
 		initMenu();
 	}
 
@@ -103,5 +101,5 @@ public class Fenetre extends JFrame {
 		this.setJMenuBar(mnuMenuBar);
 
 	}
-	
+
 }

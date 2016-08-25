@@ -14,7 +14,8 @@ public class ChargeImage {
 			return ImageIO.read(ChargeImage.class.getResource(path));
 		} catch (IOException e) {
 			e.printStackTrace();
-			System.exit(1); // si échec de chargement de l'image, on quitte le programme
+			System.exit(1); // si échec de chargement de l'image, on quitte le
+							// programme
 		}
 		return null;
 	}

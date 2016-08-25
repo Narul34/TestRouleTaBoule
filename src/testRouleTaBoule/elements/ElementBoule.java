@@ -115,10 +115,16 @@ public class ElementBoule {
 	// Fonction de variation de la position y avec gestion des collisions
 	public void moveY() {
 
-		int leftX = (int) (coord.getX() + collisionBox.x) / Element.ELEMENT_WIDTH; //(gauche de la hitbox)
-		//System.out.println(leftX);
-		int rightX = (int) (coord.getX() + collisionBox.x + collisionBox.width) / Element.ELEMENT_WIDTH; // (droite de la hitbox)
-	//	System.out.println(rightX);
+		int leftX = (int) (coord.getX() + collisionBox.x) / Element.ELEMENT_WIDTH; // (gauche
+																					// de
+																					// la
+																					// hitbox)
+		// System.out.println(leftX);
+		int rightX = (int) (coord.getX() + collisionBox.x + collisionBox.width) / Element.ELEMENT_WIDTH; // (droite
+																											// de
+																											// la
+																											// hitbox)
+		// System.out.println(rightX);
 		// si on bouge vers le haut
 		if (yMove < 0) {
 			// coord future y = coord y de la partie haute de la hitbox
@@ -138,7 +144,7 @@ public class ElementBoule {
 			if (!collisionAvecElement(leftX, fuY) && !collisionAvecElement(rightX, fuY)) {
 				coord.setY((int) (coord.getY() + yMove));
 			} else {
-				coord.setY(fuY * Element.ELEMENT_HEIGHT - collisionBox.y - collisionBox.height -1);
+				coord.setY(fuY * Element.ELEMENT_HEIGHT - collisionBox.y - collisionBox.height - 1);
 			}
 		}
 	}
